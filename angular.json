@@ -25,9 +25,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/lib/animate/animate.min.css",
+              "src/assets/lib/owlcarousel/assets/owl.carousel.min.css",
+              "src/assets/css/style.css",
+              "node_modules/ngx-spinner/animations/ball-triangle-path.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/lib/easing/easing.min.js",
+              "src/assets/lib/owlcarousel/owl.carousel.min.js",
+              "src/assets/mail/jqBootstrapValidation.min.js",
+              "src/assets/mail/contact.js",
+              "src/assets/js/main.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "ca93fff1-9d33-4fb1-9277-431e4e7fb33b"
   }
 }
