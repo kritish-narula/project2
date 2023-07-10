@@ -16,10 +16,14 @@ import { JeansComponent } from './layout/jeans/jeans.component';
 import { JacketsComponent } from './layout/jackets/jackets.component';
 import { SportswearComponent } from './layout/sportswear/sportswear.component';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './layout/login/login.component';
 import { RegisterComponent } from './layout/register/register.component';
-
+import { AdminlayoutComponent } from './adminlayout/adminlayout.component';
+import { AdminheaderComponent } from './adminlayout/adminheader/adminheader.component';  
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { AdminhomeComponent } from './adminlayout/adminhome/adminhome.component';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,13 +40,19 @@ import { RegisterComponent } from './layout/register/register.component';
     JacketsComponent,
     SportswearComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminlayoutComponent,
+    AdminheaderComponent,
+    AdminhomeComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     NgxSpinnerModule,
     AppRoutingModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

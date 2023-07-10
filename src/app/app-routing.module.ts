@@ -12,6 +12,8 @@ import { JacketsComponent } from './layout/jackets/jackets.component';
 import { JeansComponent } from './layout/jeans/jeans.component';
 import { CartComponent } from './layout/cart/cart.component';
 import { LoginComponent } from './layout/login/login.component';
+import { AdminlayoutComponent } from './adminlayout/adminlayout.component';
+import { AdminheaderComponent } from './adminlayout/adminheader/adminheader.component';
 
 const routes: Routes = [
   {
@@ -52,6 +54,17 @@ const routes: Routes = [
       },
       {
         path:'login',component:LoginComponent
+      }
+    ]  
+  },
+  {
+    path:'adminlayout',component:AdminlayoutComponent,
+    children:[
+      {
+        path:'login',component:LoginComponent
+      },
+      {
+        path:'contact',component:ContactComponent
       }
     ]
   }
