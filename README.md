@@ -33,4 +33,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Kritish narula
 Attire club 
 technology used: HTML, CSS, JavaScript, ECMA Script, Angular JS,Type Script
-               
+
+template url : https://themewagon.github.io/multishop/
+Thapar University
+Demo credentials:
+email : kritish@gmail.com
+password: 123
+
+template 
+scenario 
