@@ -24,6 +24,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AdminhomeComponent } from './adminlayout/adminhome/adminhome.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { AdditemComponent } from './adminlayout/additem/additem.component';
+import { UpdateitemComponent } from './adminlayout/updateitem/updateitem.component';
+import { RemoveitemComponent } from './adminlayout/removeitem/removeitem.component';
+import { DashboardComponent } from './adminlayout/dashboard/dashboard.component';
+import { AddcategoryComponent } from './adminlayout/addcategory/addcategory.component';
+import { ManagecategoryComponent } from './adminlayout/managecategory/managecategory.component';
+import { UpdatecategoryComponent } from './adminlayout/updatecategory/updatecategory.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +50,14 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
     RegisterComponent,
     AdminlayoutComponent,
     AdminheaderComponent,
-    AdminhomeComponent
+    AdminhomeComponent,
+    AdditemComponent,
+    UpdateitemComponent,
+    RemoveitemComponent,
+    DashboardComponent,
+    AddcategoryComponent,
+    ManagecategoryComponent,
+    UpdatecategoryComponent
   ],
   imports: [
     BrowserModule,

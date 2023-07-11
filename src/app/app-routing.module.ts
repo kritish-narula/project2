@@ -14,6 +14,13 @@ import { CartComponent } from './layout/cart/cart.component';
 import { LoginComponent } from './layout/login/login.component';
 import { AdminlayoutComponent } from './adminlayout/adminlayout.component';
 import { AdminheaderComponent } from './adminlayout/adminheader/adminheader.component';
+import { AdditemComponent } from './adminlayout/additem/additem.component';
+import { UpdateitemComponent } from './adminlayout/updateitem/updateitem.component';
+import { RemoveitemComponent } from './adminlayout/removeitem/removeitem.component';
+import { AddcategoryComponent } from './adminlayout/addcategory/addcategory.component';
+import { UpdatecategoryComponent } from './adminlayout/updatecategory/updatecategory.component';
+import { ManagecategoryComponent } from './adminlayout/managecategory/managecategory.component';
+import { DashboardComponent } from './adminlayout/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -65,6 +72,27 @@ const routes: Routes = [
       },
       {
         path:'contact',component:ContactComponent
+      },
+      {
+        path:'additem',component:AdditemComponent
+      },
+      {
+        path:'updateitem',component:UpdateitemComponent
+      },
+      {
+        path:'removeitem',component:RemoveitemComponent
+      },
+      {
+        path:'addcategory',component:AddcategoryComponent
+      },
+      {
+        path:'updatecategory',component:UpdatecategoryComponent
+      },
+      {
+        path:'managecategory',component:ManagecategoryComponent
+      },
+      {
+        path:'dashboard',component:DashboardComponent
       }
     ]
   }
