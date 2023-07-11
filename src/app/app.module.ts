@@ -31,6 +31,10 @@ import { DashboardComponent } from './adminlayout/dashboard/dashboard.component'
 import { AddcategoryComponent } from './adminlayout/addcategory/addcategory.component';
 import { ManagecategoryComponent } from './adminlayout/managecategory/managecategory.component';
 import { UpdatecategoryComponent } from './adminlayout/updatecategory/updatecategory.component';
+import { SleepwearComponent } from './layout/sleepwear/sleepwear.component';
+import { SwimwearComponent } from './layout/swimwear/swimwear.component';
+import { CoatsComponent } from './layout/coats/coats.component';
+import { ShopdetailComponent } from './layout/shopdetail/shopdetail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +61,11 @@ import { UpdatecategoryComponent } from './adminlayout/updatecategory/updatecate
     DashboardComponent,
     AddcategoryComponent,
     ManagecategoryComponent,
-    UpdatecategoryComponent
+    UpdatecategoryComponent,
+    SleepwearComponent,
+    SwimwearComponent,
+    CoatsComponent,
+    ShopdetailComponent
   ],
   imports: [
     BrowserModule,

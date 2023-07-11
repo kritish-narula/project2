@@ -21,6 +21,10 @@ import { AddcategoryComponent } from './adminlayout/addcategory/addcategory.comp
 import { UpdatecategoryComponent } from './adminlayout/updatecategory/updatecategory.component';
 import { ManagecategoryComponent } from './adminlayout/managecategory/managecategory.component';
 import { DashboardComponent } from './adminlayout/dashboard/dashboard.component';
+import { SleepwearComponent } from './layout/sleepwear/sleepwear.component';
+import { SwimwearComponent } from './layout/swimwear/swimwear.component';
+import { ShopdetailComponent } from './layout/shopdetail/shopdetail.component';
+import { SportswearComponent } from './layout/sportswear/sportswear.component';
 
 const routes: Routes = [
   {
@@ -61,6 +65,18 @@ const routes: Routes = [
       },
       {
         path:'login',component:LoginComponent
+      },
+      {
+        path:'sleepwear',component:SleepwearComponent
+      },
+      {
+        path:'swimwear',component:SwimwearComponent
+      },
+      {
+        path:'shopdetail',component:ShopdetailComponent
+      },
+      {
+        path:'sportswear',component:SportswearComponent
       }
     ]  
   },
