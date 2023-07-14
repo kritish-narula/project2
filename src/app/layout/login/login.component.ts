@@ -27,13 +27,14 @@ export class LoginComponent implements OnInit{
       setTimeout(() => {
       console.log("Login Successfully")
       this.toastr.success("Login Successfully")
-      this.router.navigateByUrl("/adminlayout")
+      this.router.navigateByUrl("/adminlayout/dashboard")
       }, 3000);
     }
     else{
       this.spinner.hide()
       console.log("Invalid email or password")
       this.toastr.error("Invalid Email or Password")
+      this.router.navigateByUrl("/layout/home")
     }
   }
 

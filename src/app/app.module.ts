@@ -35,6 +35,7 @@ import { SleepwearComponent } from './layout/sleepwear/sleepwear.component';
 import { SwimwearComponent } from './layout/swimwear/swimwear.component';
 import { CoatsComponent } from './layout/coats/coats.component';
 import { ShopdetailComponent } from './layout/shopdetail/shopdetail.component';
+import { ManageitemComponent } from './adminlayout/manageitem/manageitem.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,13 +66,14 @@ import { ShopdetailComponent } from './layout/shopdetail/shopdetail.component';
     SleepwearComponent,
     SwimwearComponent,
     CoatsComponent,
-    ShopdetailComponent
+    ShopdetailComponent,
+    ManageitemComponent
   ],
   imports: [
     BrowserModule,
     NgxSpinnerModule,
     AppRoutingModule,
-    BrowserAnimationsModule, // required animations module
+    BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,
     FormsModule

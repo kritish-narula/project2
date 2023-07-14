@@ -25,6 +25,7 @@ import { SleepwearComponent } from './layout/sleepwear/sleepwear.component';
 import { SwimwearComponent } from './layout/swimwear/swimwear.component';
 import { ShopdetailComponent } from './layout/shopdetail/shopdetail.component';
 import { SportswearComponent } from './layout/sportswear/sportswear.component';
+import { ManageitemComponent } from './adminlayout/manageitem/manageitem.component';
 
 const routes: Routes = [
   {
@@ -109,6 +110,9 @@ const routes: Routes = [
       },
       {
         path:'dashboard',component:DashboardComponent
+      },
+      {
+        path:'manageitem',component:ManageitemComponent
       }
     ]
   }
