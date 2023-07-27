@@ -13,7 +13,9 @@ export class CheckoutComponent implements OnInit{
   }
   checkoutform={
     fname:'',
-    lname:''
+    lname:'',
+    email:'',
+    
   }
   constructor(private router:Router,private spinner:NgxSpinnerService,private toastr:ToastrService){}
   submit(){

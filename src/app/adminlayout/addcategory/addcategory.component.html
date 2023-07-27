@@ -1,3 +1,6 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-triangle-path" [fullScreen] = "true"><p style="color: rgb(238, 232, 232)" > Loading... </p></ngx-spinner>
+
+
 <form>
     <div class="container-fluid">
         <div class="row px-xl-5">
@@ -14,7 +17,7 @@
                             <input type="file">
                         </div>
                         <div class="col-md-12 form-group mx-auto">
-                            <button type="submit" class="btn btn-dark mx-auto d-block">SUBMIT</button>
+                            <button type="submit" class="btn btn-dark mx-auto d-block" (click)="addcategory()" (click)="submit()">SUBMIT</button>
                         </div>
 
                     </div>

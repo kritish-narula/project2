@@ -36,6 +36,12 @@ import { SwimwearComponent } from './layout/swimwear/swimwear.component';
 import { CoatsComponent } from './layout/coats/coats.component';
 import { ShopdetailComponent } from './layout/shopdetail/shopdetail.component';
 import { ManageitemComponent } from './adminlayout/manageitem/manageitem.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { environment } from '../environments/environment';
+import { RemovecategoryComponent } from './adminlayout/removecategory/removecategory.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +73,8 @@ import { ManageitemComponent } from './adminlayout/manageitem/manageitem.compone
     SwimwearComponent,
     CoatsComponent,
     ShopdetailComponent,
-    ManageitemComponent
+    ManageitemComponent,
+    RemovecategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +83,11 @@ import { ManageitemComponent } from './adminlayout/manageitem/manageitem.compone
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
