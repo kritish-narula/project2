@@ -7,11 +7,11 @@
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <label>Name of previous Category</label>
-                            <input class="form-control" type="text" required placeholder="Enter Name of Product">
+                            <input class="form-control" type="text" required placeholder="Enter Name of Product" #categoryName [(ngModel)]="currentTutorial.title">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Updated Name of Category</label>
-                            <input class="form-control" type="text" required placeholder="Enter Name of Product">
+                            <input class="form-control" type="text" required placeholder="Enter Name of Product" #updatedName [(ngModel)]="currentTutorial.description">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Enter Image</label><br>

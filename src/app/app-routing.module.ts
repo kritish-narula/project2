@@ -29,7 +29,7 @@ import { ManageitemComponent } from './adminlayout/manageitem/manageitem.compone
 
 const routes: Routes = [
   {
-    path:'',redirectTo:'/layout/login',pathMatch:'full'
+    path:'',redirectTo:'/layout/home',pathMatch:'full'
   },
   {
     path:'layout',component:LayoutComponent,
@@ -103,7 +103,7 @@ const routes: Routes = [
         path:'addcategory',component:AddcategoryComponent
       },
       {
-        path:'updatecategory',component:UpdatecategoryComponent
+        path:'updatecategory/:id',component:UpdatecategoryComponent
       },
       {
         path:'managecategory',component:ManagecategoryComponent
