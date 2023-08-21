@@ -32,7 +32,7 @@ export class AddcategoryComponent implements OnInit{
     this.selectedFiles = event.target.files;
   }
 
-  submit() {
+  submit(): void {
     this.spinner.show()
     if (this.selectedFiles) {
       const file: File | null = this.selectedFiles.item(0);

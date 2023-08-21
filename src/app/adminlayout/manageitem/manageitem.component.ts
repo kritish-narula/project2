@@ -1,36 +1,63 @@
 import { Component, OnInit } from '@angular/core';
-import { TutorialService } from 'src/app/shared/tutorial.service';
-import { Tutorial } from 'src/app/models/tutorial.model';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2'
+import { ManageitemsService } from 'src/app/shared/manageitems/manageitems.service';
+import { Manageitems } from 'src/app/models/manageitems/manageitems.model';
 @Component({
   selector: 'app-manageitem',
   templateUrl: './manageitem.component.html',
   styleUrls: ['./manageitem.component.css']
 })
 export class ManageitemComponent implements OnInit{
-  tutorials?: Tutorial[];
-  constructor(private tutorialService: TutorialService) { }
+  manageitems?:Manageitems[] 
+
+  constructor(private manageitemsService: ManageitemsService) { }
+
+  // savemanageitems(): void {
+  //   this.manageitemsService.create(this.manageitems).then(() => {
+  //     console.log('Created new item successfully!');
+  //   });
+  // }
+  form = {
+    productname: '',
+    price: '',
+    imageUrl:'',
+    category:''
+  } 
 
   ngOnInit(): void {
     this.allitems();
+    this.retrievemanageitems();
   }
-  allitems(): void {
-    this.tutorialService.getAllitems().snapshotChanges().pipe(
+
+  retrievemanageitems(): void {
+    this.manageitemsService.getAll().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({ id: c.payload.doc.id, ...c.payload.doc.data() })
         )
       )
     ).subscribe(data => {
-      this.tutorials = data;
-      console.log(this.tutorials)
+      this.manageitems = data;
     });
   }
+  allitems(): void {
+    this.manageitemsService.getAll().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      this.manageitems = data;
+      console.log(this.manageitems)
+    });
+  }
+  
 
   deleteitem(id:any){
     // alert(id)
-    // this.tutorialservice.delete(id)
+    // this.manageitemsservice.delete(id)
     // .then((data)=>{
     //     console.log(data)
     // })
@@ -47,7 +74,7 @@ export class ManageitemComponent implements OnInit{
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.tutorialService.deleteitem(id)
+        this.manageitemsService.deleteitem(id)
         .then((data)=>{
             // console.log(data)
             Swal.fire(

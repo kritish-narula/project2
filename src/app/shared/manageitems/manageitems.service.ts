@@ -1,37 +1,36 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFirestore,AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { Observable } from 'rxjs';
-import { finalize } from 'rxjs/operators';
-import { Category } from 'src/app/models/category/category.model';
+import { Observable, finalize } from 'rxjs';
+import { Manageitems } from 'src/app/models/manageitems/manageitems.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
-  
-  private path = "/manageitems"
+export class ManageitemsService {
+  private path = "/categories"
 
-  categoryRef:AngularFirestoreCollection<Category>
+  manageitems:AngularFirestoreCollection<Manageitems>
 
   constructor(private db:AngularFirestore,private storage : AngularFireStorage) { 
-    this.categoryRef = db.collection("/categories")
+    this.manageitems = db.collection("/categories")
   }
 
-  pushFileToStorage(categories : Category):Observable<number | undefined>{
-    const filePath = `${this.path}/`+Math.round(Math.random()*1E9)+`${categories.fileName?.name}`;
+  pushFileToStorage(manageitems : Manageitems):Observable<number | undefined>{
+    const filePath = `${this.path}/`+Math.round(Math.random()*1E9)+`${manageitems.fileName?.name}`;
     const storageRef = this.storage.ref(filePath);
-    const uploadTask = this.storage.upload(filePath, categories.fileName);
+    const uploadTask = this.storage.upload(filePath, manageitems.fileName);
 
     uploadTask.snapshotChanges().pipe(
       finalize(() => {
         storageRef.getDownloadURL().subscribe(downloadURL => {
           // console.log("Downloaded URL",downloadURL)
           // console.log("DATA",categories)
-          let data: Category = {
+          let data: Manageitems = {
             imageUrl: downloadURL,
-            categoryName : categories.categoryName,
-            status : categories.status,
+            productname : manageitems.productname,
+            status : manageitems.status,
             // fileName: categories.fileName?.name
           }
           this.saveFileData(data);
@@ -52,9 +51,9 @@ export class CategoryService {
       finalize(() => {
         storageRef.getDownloadURL().subscribe(downloadURL => {
           // console.log("Downloaded URL",downloadURL)
-          let mydata: Category = {
+          let mydata: Manageitems = {
             imageUrl: downloadURL,
-            categoryName : data.categoryName,
+            productname : data.productname,
           }
           this.update(id,mydata);
         });
@@ -65,20 +64,27 @@ export class CategoryService {
     return uploadTask.percentageChanges();
   }
 
-  private saveFileData(categories: Category): void {
-    this.categoryRef.add({ ...categories })
+  private saveFileData(manageitems: Manageitems): void {
+    this.manageitems.add({ ...manageitems })
   }
 
-  getAll():AngularFirestoreCollection<Category>{
-    return this.categoryRef
+  getAll():AngularFirestoreCollection<Manageitems>{
+    return this.manageitems
   }
   
   getSingle(id:any){
-    return this.categoryRef.doc(id).get()
+    return this.manageitems.doc(id).get()
   }
 
   update(id:any,data:any){
-    return this.categoryRef.doc(id).update(data)
+    return this.manageitems.doc(id).update(data)
+  }
+
+  deleteitem(id: string): Promise<void> {
+    return this.manageitems.doc(id).delete();
+  }
+  additem(manageitems : Manageitems): any {
+    return this.manageitems.add({ ...manageitems });
   }
 
 
