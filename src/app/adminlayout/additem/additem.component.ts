@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./additem.component.css']
 })
 export class AdditemComponent implements OnInit{
-  manageitems: Manageitems = new Manageitems();
+  // manageitems: Manageitems = new Manageitems();
   selectedFiles?: FileList;
   currentFileUpload?: Manageitems;
   percentage = 0;
