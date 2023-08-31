@@ -9,18 +9,18 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  ngOnInit(): void {
-    
-  }
+ 
   constructor(private router:Router,private toastr:ToastrService,private spinner:NgxSpinnerService){
 
+  }
+  ngOnInit(): void {
+   this.spinner.hide() 
   }
   loginform = {
     email:'',
     password:'',
   }
   submit(){
-    console.log(this.loginform)
     this.spinner.show()
     if(this.loginform.email == "kritish@gmail.com" && this.loginform.password == "123")
     {
