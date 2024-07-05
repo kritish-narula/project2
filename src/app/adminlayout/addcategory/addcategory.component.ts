@@ -24,7 +24,7 @@ export class AddcategoryComponent implements OnInit{
 
   constructor(private categoryService: CategoryService, private Router: Router,private toastr:ToastrService,private spinner:NgxSpinnerService) { }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.spinner.hide() 
   }
 
 

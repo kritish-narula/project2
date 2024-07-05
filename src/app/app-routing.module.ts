@@ -74,7 +74,7 @@ const routes: Routes = [
         path:'swimwear',component:SwimwearComponent
       },
       {
-        path:'shopdetail',component:ShopdetailComponent
+        path:'shopdetail/:id',component:ShopdetailComponent
       },
       {
         path:'sportswear',component:SportswearComponent

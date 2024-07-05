@@ -24,7 +24,7 @@ export class AdditemComponent implements OnInit{
 
   constructor(private manageitemservice: ManageitemsService, private Router: Router,private toastr:ToastrService,private spinner:NgxSpinnerService) { }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
 
 
